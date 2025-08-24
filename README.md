@@ -18,7 +18,7 @@ MindMend acts as a **personal wellness buddy** inside your browser, nudging you 
 
 ## Features
 
-### MVP (Phase 1)
+### MVP (Phase 1) [Working on it right now]
 - Detect burnout signals (long screen time, tab switching, endless scrolling).
 - Popup UI with curated wellness break suggestions.
 
