@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MindMend – Chrome Extension for Digital Wellness
 
-## Getting Started
+MindMend is a **Chrome Extension** built with **Plasmo + React + TypeScript + TailwindCSS** that detects when users are experiencing **screen burnout** and nudges them with **personalized digital breaks** (stretching, breathing, short walks, or fun micro-activities).  
 
-First, run the development server:
+Over time, it **learns from user feedback** and adapts to create a healthier, more productive browsing experience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Overview
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Problem  
+People spend excessive time online → fatigue, stress, and reduced productivity.  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Solution  
+MindMend acts as a **personal wellness buddy** inside your browser, nudging you to take breaks **before burnout**.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### MVP (Phase 1)
+- Detect burnout signals (long screen time, tab switching, endless scrolling).
+- Popup UI with curated wellness break suggestions.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Phase 2
+- Reinforcement learning loop → learns from user feedback.
+- Personalized break recommendations.
 
-## Deploy on Vercel
+### Phase 3
+- Sidepanel + NewTab dashboard with analytics (screen time, break history).
+- Gamification: points, streaks, rewards.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Phase 4 (Future)
+- Google Fit / Apple Health API integrations for holistic wellness.
+- Cross-device syncing for a full wellness ecosystem.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Tech Stack
+
+**Frontend**
+- Plasmo – Chrome extension framework  
+- React + TypeScript  
+- TailwindCSS + shadcn/ui  
+- Framer Motion – animations  
+
+**AI/ML**
+- Phase 1 → Rule-based detection (tab time, scroll speed, tab-switch frequency)  
+- Phase 2 → Reinforcement Learning (Python: PyTorch / Scikit-learn / TensorFlow)  
+- In-browser inference → TensorFlow.js / ONNX.js  
+
+**Integration**
+- Chrome Extension APIs → background scripts, content scripts, notifications  
+- Local storage → preferences, history, streaks  
+
+---
+
+## Architecture
+
+---
+
+## Workflow
+            ┌───────────────┐
+            │     User      │
+            │ Interacts &   │
+            │ gives feedback│
+            └───────┬───────┘
+                    │
+                    ▼
+    ┌─────────────────────────────────┐
+    │ User Interface (Frontend - UI) │
+    │ Popup (React) → shows alerts,  │
+    │ suggestions                    │
+    └───────────┬────────────────────┘
+                │ Collects events
+                ▼
+    ┌─────────────────────────────────┐
+    │     Background Scripts          │
+    │ - Track screen usage patterns   │
+    │   (time spent, activity signals)│
+    │ - Send raw usage data to ML     │
+    └───────────┬────────────────────┘
+                │ Sends usage data
+                ▼
+    ┌─────────────────────────────────┐
+    │ Backend Services / ML Module    │
+    │ - Suggestion engine adapts ideas│
+    │ - Feedback loop from user       │
+    │ - Local ML or API-based model   │
+    └───────────┬────────────────────┘
+                │ Sends suggestions
+                ▼
+    ┌─────────────────────────────────┐
+    │ Storage Layer (Database)        │
+    │ - Saves preferences, history,   │
+    │   streaks, and feedback         │
+    │ - Provides personalization      │
+    └─────────────────────────────────┘
+
+
+---
+
+## Roadmap
+
+- Phase 1 → Burnout detection + static break suggestions  
+- Phase 2 → Personalized ML with reinforcement learning  
+- Phase 3 → Gamification + analytics dashboard  
+- Phase 4 → API integrations (Google Fit, Apple Health)  
+
+---
+
+
